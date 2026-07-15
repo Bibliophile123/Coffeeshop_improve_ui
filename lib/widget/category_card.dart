@@ -6,8 +6,8 @@ class CategorySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 15,
-      runSpacing: 15,
+      spacing: 10,
+      runSpacing: 10,
       children: const [
         CategoryCard(
           title: "Coffee",
@@ -61,29 +61,29 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      height: 180,
+      width: 110,
+      height: 130,
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(20),
         border: backgroundColor == Colors.white
             ? Border.all(color: Colors.grey.shade300)
             : null,
       ),
       child: Column(
         children: [
-          const SizedBox(height: 18),
+          const SizedBox(height: 12),
 
           Container(
-            width: 120,
-            height: 90,
+            width: 80,
+            height: 65,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),
               boxShadow: const [
                 BoxShadow(
                   color: Colors.black12,
-                  blurRadius: 4,
+                  blurRadius: 3,
                   offset: Offset(2, 2),
                 ),
               ],
@@ -91,7 +91,7 @@ class CategoryCard extends StatelessWidget {
             child: Center(
               child: Icon(
                 icon,
-                size: 65,
+                size: 38,
                 color: Colors.black,
               ),
             ),
@@ -103,12 +103,12 @@ class CategoryCard extends StatelessWidget {
             title,
             style: TextStyle(
               color: textColor,
-              fontSize: 28,
-              fontWeight: FontWeight.w400,
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
             ),
           ),
 
-          const SizedBox(height:10),
+          const SizedBox(height: 12),
         ],
       ),
     );

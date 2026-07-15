@@ -50,12 +50,12 @@ class HomePage extends StatelessWidget {
             // Category Cards
             const CategorySection(),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
 
             // Hot Today Banner
             Container(
               width: double.infinity,
-              height: 55,
+              height: 45,
               decoration: BoxDecoration(
                 color:  Colors.white,
                 borderRadius: BorderRadius.circular(15),

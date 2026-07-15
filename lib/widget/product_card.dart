@@ -6,35 +6,31 @@ class ProductSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Wrap(
-      spacing: 15,
-      runSpacing: 20,
+      spacing: 10,
+      runSpacing: 15,
       children: [
-
         ProductCard(
           image: "assets/coffee.jpg",
           title: "Pumpkin Spice Latte",
-          description: "Creamy Espresso Blended\nWith Silky Steamed Milk.",
+          description: "Creamy Espresso\nWith Milk",
           price: "AED 20.00",
         ),
-        SizedBox(width: 8),
         ProductCard(
           image: "assets/croissant.jpg",
           title: "Butter Croissant",
-          description: "Freshly baked buttery\nFrench croissant.",
+          description: "Freshly Baked\nCroissant",
           price: "AED 18.00",
         ),
-        SizedBox(width: 8),
         ProductCard(
           image: "assets/matcha_latte.jpg",
           title: "Matcha Latte",
-          description: "Premium Matcha With\nFresh Milk.",
+          description: "Premium Matcha\nFresh Milk",
           price: "AED 22.00",
         ),
-        SizedBox(width: 8),
         ProductCard(
           image: "assets/iced_coffee.jpg",
           title: "Iced Coffee",
-          description: "Cold Brew Coffee\nServed Over Ice.",
+          description: "Cold Brew\nOver Ice",
           price: "AED 16.00",
         ),
       ],
@@ -58,80 +54,81 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 165,
+    return SizedBox(
+      width: 180,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Product Image
           Container(
-            width: 165,
-            height: 170,
+            height: 110,
+            width: 150,
             decoration: BoxDecoration(
               color: Colors.grey.shade300,
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(18),
             ),
             child: Center(
               child: Image.asset(
                 image,
-                width: 120,
-                height: 120,
+                width: 80,
+                height: 80,
                 fit: BoxFit.contain,
               ),
             ),
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 6),
 
-          // Product Name
           Text(
             title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: const TextStyle(
-              fontSize: 16,
               fontWeight: FontWeight.bold,
+              fontSize: 14,
             ),
           ),
 
-          const SizedBox(height: 5),
+          const SizedBox(height: 3),
 
-          // Description
           Text(
             description,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              fontSize: 13,
               color: Colors.grey.shade600,
+              fontSize: 11,
             ),
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 6),
 
-          // Price & Add Button
           Row(
             children: [
-              Text(
-                price,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: Text(
+                  price,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                  ),
                 ),
               ),
-
-              SizedBox(width: 10),
-
+            const SizedBox(width: 10),
               Container(
-                height: 36,
-                width: 36,
+                height: 28,
+                width: 28,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     color: const Color(0xff1F5C4D),
                     width: 2,
                   ),
+                  borderRadius: BorderRadius.circular(8),
                 ),
+                
                 child: const Icon(
                   Icons.add,
+                  size: 16,
                   color: Color(0xff1F5C4D),
-                  size: 22,
                 ),
               ),
             ],
